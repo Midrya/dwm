@@ -1,6 +1,7 @@
 void
 central (Monitor *mon) 
 {
+  unsigned int factor = 2;
   unsigned int i, n, nx, ny, nw, nh;
   Client *c;
 
@@ -26,8 +27,8 @@ central (Monitor *mon)
     {
       unsigned int lnx, rnx, cnx, lrnw, cnw, lnh, rnh, lny, rny;
 
-      cnw  = nw / 2;
-      lrnw = nw / 4;
+      cnw  = nw / factor;
+      lrnw = (nw - cnw) / 2;
       lnx  = nx;
       cnx  = lnx + lrnw;
       rnx  = cnx + cnw;
